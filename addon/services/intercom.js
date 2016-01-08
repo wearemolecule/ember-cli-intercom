@@ -7,5 +7,9 @@ export default Ember.Service.extend({
 
   update(params) {
     Intercom('update', params);
-  }
+  },
+
+  trackEvent(eventMessage) {
+    Intercom('trackEvent', eventMessage);
+  },
 });

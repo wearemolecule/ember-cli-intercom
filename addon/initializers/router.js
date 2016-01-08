@@ -4,7 +4,10 @@ export function initialize() {
   Ember.Router.reopen({
     intercom: Ember.inject.service(),
 
-    notifyIntercom: Ember.on('didTransition', function () {
+    trackTransition: Ember.on('didTransition', function() {
+      let message = `visited ${this.get('url')}`;
+
+      this.get('intercom').trackEvent(message);
       this.get('intercom').update();
     })
   });
