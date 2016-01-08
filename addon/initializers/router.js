@@ -5,7 +5,7 @@ export function initialize() {
     intercom: Ember.inject.service(),
 
     trackTransition: Ember.on('didTransition', function() {
-      let message = `visited ${this.get('url')}`;
+      let message = `went to ${this.get('url')}`;
 
       this.get('intercom').trackEvent(message);
       this.get('intercom').update();
