@@ -3,14 +3,14 @@ import env from 'frontend/config/environment';
 
 const intercomConfig = env['ember-cli-intercom'];
 
-export function initialize(container, application) {
+export function initialize(application) {
   if (intercomConfig.logTransitions === true) {
     logTransitions(application);
   }
 }
 
 export default {
-  name: 'router',
+  name: 'intercom-router',
   initialize
 };
 
